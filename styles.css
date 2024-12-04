@@ -1,0 +1,618 @@
+body {
+  font-family: 'Book Antiqua', serif;
+  /* margin: 0;
+  padding: 0; */
+  background: url('asset/stars.jpg') no-repeat center center fixed; /* 배경 이미지 설정 */
+  background-size: cover;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.star {
+  animation: twinkle 3s infinite;
+}
+
+button, .button {
+  font-family: 'Material Symbols Outlined';
+  /* font-family: 'Book Antiqua', serif; */
+  font-size: 22px;
+}
+
+/* button, .button {
+  font-family: 'Pinyon Script', serif;
+  font-size: 22px;
+  background: transparent;
+  border: 1px solid #88CCEE;
+  color: #fff;
+  box-shadow: 0 0 10px #88CCEE;
+} */
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 50px; /* 기본 크기 */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.button {
+  font-family: 'Material Symbols Outlined';
+  background: none; /* 박스 배경 제거 */
+  border: none; /* 버튼 테두리 제거 */
+  color: white; /* 텍스트 색상 */
+  font-size: 2rem; /* 원하는 텍스트 크기 */
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #fff; /* 하얀빛 범위를 늘림 */
+  animation: twinkle 1.5s infinite alternate; /* 깜빡이는 애니메이션 */
+  cursor: pointer; /* 클릭 가능 유지 */
+}
+
+.greeting {
+  background: none; /* 박스 배경 제거 */
+  border: none; /* 버튼 테두리 제거 */
+  color: white; /* 텍스트 색상 */
+  font-size: 15rem; /* 원하는 텍스트 크기 */
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #fff; /* 하얀빛 범위를 늘림 */
+  animation: twinkle 1.5s infinite alternate; /* 깜빡이는 애니메이션 */
+  cursor: pointer; /* 클릭 가능 유지 */
+}
+
+#openChatBtn {
+  background: none; /* 박스 배경 제거 */
+  border: none; /* 버튼 테두리 제거 */
+  color: white; /* 텍스트 색상 */
+  background: transparent;
+  font-size: 2rem; /* 원하는 텍스트 크기 */
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #fff; /* 하얀빛 범위를 늘림 */
+  animation: twinkle 1.5s infinite alternate; /* 깜빡이는 애니메이션 */
+  cursor: pointer; /* 클릭 가능 유지 */
+}
+/* 
+*.material-icons{
+  font-size: 48px;
+} */
+
+/* .material-symbols-outlined {
+  font-size: 50px;
+} */
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: white; */
+  overflow: hidden;
+}
+
+
+.widget {
+  position: absolute;
+  background-color: #2c6d91;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 22px;
+}
+
+
+.button {
+  position: absolute;
+  transform: translateY(-50%);
+  /* background-color: #2c6d91;
+  color: white; */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+/* Clock Widget */
+.clock {
+  top: 40%;
+  left: 50%;
+  border: none; /* 버튼 테두리 제거 */
+  color: white; /* 텍스트 색상 */
+  background: transparent;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #fff; /* 하얀빛 범위를 늘림 */
+  animation: twinkle 1.5s infinite alternate; /* 깜빡이는 애니메이션 */
+  cursor: pointer; /* 클릭 가능 유지 */
+  font-size: 40px;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/* Search Bar */
+.search-bar {
+  position: absolute;
+  top: 35%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 200px;
+  font-size: 20px;
+}
+
+
+
+/* Greeting Text */
+.greeting {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  color: #2c6d91;
+}
+
+
+
+/* Music ON/OFF Toggle */
+.music {
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+#musicStatus {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.music-label {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+
+
+/* Settings Button */
+.button.settings {
+  /* font-size: 50px; */
+  bottom: 5px;
+  left: 20px;
+}
+
+
+
+/* Personal Therapist Button */
+
+#openChatBtn {
+   /* font-size: 50px; */
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  /* background-color: #2c6d91; */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#openChatBtn:hover {
+  background-color: #1d4e6b;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+/* .button.therapist {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #2c6d91;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.button.therapist:hover {
+  background-color: #1d4e6b;
+} */
+
+/* Weather Button */
+.weather {
+  /* top: 10px; 
+  left: 100px;  */
+  background: none; /* 박스 배경 제거 */
+  border: none; /* 버튼 테두리 제거 */
+  color: white; /* 텍스트 색상 */
+  font-size: 15rem; /* 원하는 텍스트 크기 */
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #fff; /* 하얀빛 범위를 늘림 */
+  animation: twinkle 1.5s infinite alternate; /* 깜빡이는 애니메이션 */
+  cursor: pointer; /* 클릭 가능 유지 */
+} 
+
+.weather-info {
+  color: white; /* 글자 색을 하얗게 */
+  font-family: 'Material Symbols Outlined', sans-serif; /* 아이콘과 비슷한 폰트 */
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff; /* 별빛 효과 */
+}
+
+.weather-info h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.weather-info p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Calendar Button */
+.button.calendar {
+
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 달력 스타일 */
+.calendar-container {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Book Antiqua', serif;
+  display: none; /* Initially hidden */
+  width: 350px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#monthYear {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#prevMonth, #nextMonth {
+  padding: 5px 10px;
+  background-color: #2c6d91;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#prevMonth:hover, #nextMonth:hover {
+  background-color: #1d4e6b;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: center;
+  width: 14.28%;
+  cursor: pointer;
+}
+
+table td:hover {
+  background-color: #f1f1f1;
+}
+
+table td.selected {
+  background-color: #2c6d91;
+  color: white;
+}
+
+
+
+/* To Do/Note Button */
+.button.todo {
+  font-family: 'Material Symbols Outlined';
+  bottom: 5px;
+  right: 20px;
+
+}
+
+/* 체크리스트 스타일 */
+.checklist {
+  position: absolute;
+  bottom: 90px; 
+  right: 20px; 
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Book Antiqua', serif;
+  display: none;  /* Initially hidden */
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.checklist h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2c6d91;
+}
+
+.checklist ul {
+  padding-left: 20px;
+}
+
+.checklist li {
+  margin: 10px 0;
+}
+
+.checklist input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#newItemInput {
+  width: 100%;
+  padding: 8px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#addItemButton {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  background-color: #2c6d91;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#addItemButton:hover {
+  background-color: #1d4e6b;
+}
+
+/* #openChatBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+} */
+
+.modal {
+  display: none; /* 숨겨진 상태로 시작 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  background: white;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#chatMessages {
+  height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+/*
+#chatInput {
+  width: calc(100% - 60px);
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#sendBtn {
+  padding: 10px;
+  cursor: pointer;
+} */
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.response {
+  margin-top: 15px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 50px;
+  border: 1px solid #ddd;
+  white-space: pre-wrap;
+}
+.chat-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  }
+.chat-messages {
+  height: 400px;
+  overflow-y: auto;
+  padding: 15px;
+  background-color: #f9f9f9;
+  }
+  .message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 80%;
+  }
+  .user-message {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+  }
+  .ai-message {
+  background-color: #e9ecef;
+  color: black;
+  }
+  .input-area {
+  display: flex;
+  padding: 10px;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  }
+  #userInput {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  }
+  #submitBtn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  }
+  #submitBtn:hover {
+  background-color: #0056b3;
+  }
+  .loading {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  }
+
+  #settingsContainer {
+    display: none;
+    position: absolute;
+    bottom: 90px;
+    left: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    width: 250px;
+  }
+  
+  #settingsContainer h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  #settingsContainer label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  #settingsContainer input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
